@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./src/style/greetings.css" rel="stylesheet">
+</head>
+<body>
+    <form id="login-form">
+        <input id="username" required maxlength="15" type="text" placeholder="username을 입력해주세요!"/>
+        <input id="password" required maxlength="8" type="password" placeholder="password를 입력해주세요!"/>
+        <button type="submit">Login</button>
+    </form>
+
+    <h1 id="greeting" class="hidden"></h1>
+    <h2 id="clock">00:00:00</h2>
+    
+    <form id="todo-form">
+        <input required maxlength="100" type="text" placeholder="내용을 입력해주세요"/>
+        <button type="submit">생성</button>
+    </form>
+
+    <ul id="todo-list"></ul>
+    
+    <div id="quotes-box">
+        <p></p>
+        <p></p>
+    </div>
+
+    <div id="weather">
+        <span></span>
+        <span></span>
+    </div>
+
+    <script src="./src/greetings.js"></script>
+    <script src="./src/clock.js"></script>
+    <script src="./src/quotes.js"></script>
+    <script src="./src/background.js"></script>
+    <script src="./src/todo.js"></script>
+    <script src="./src/geolocation.js"></script>
+</body>
+</html>
