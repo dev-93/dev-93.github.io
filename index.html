@@ -1,44 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
-<link>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./src/style/greetings.css" rel="stylesheet">
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="사파리 — 상품 선택에 도움이 되는 정보와 콘텐츠를 만드는 개인사업체입니다.">
+  <title>사파리 | 상품 선택을 돕는 콘텐츠</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   "Noto Sans KR", sans-serif;
+      color: #202820;
+      background: #f7f8f4;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.8; }
+    a { color: #335d42; text-underline-offset: 4px; }
+
+    .wrap {
+      width: min(100% - 40px, 880px);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 26px 0;
+      border-bottom: 1px solid #dfe4da;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 800;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .hero { padding: 88px 0 72px; }
+
+    .label {
+      color: #52684e;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    h1 {
+      margin: 18px 0 24px;
+      font-size: clamp(32px, 6vw, 54px);
+      line-height: 1.35;
+      letter-spacing: -.04em;
+      word-break: keep-all;
+    }
+
+    .intro {
+      max-width: 620px;
+      color: #566052;
+      font-size: 18px;
+      word-break: keep-all;
+    }
+
+    section {
+      padding: 36px 0;
+      border-top: 1px solid #dfe4da;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      letter-spacing: -.03em;
+    }
+
+    p { margin: 0 0 16px; }
+
+    .card {
+      padding: 28px;
+      background: #fff;
+      border: 1px solid #dfe4da;
+      border-radius: 18px;
+    }
+
+    .card h3 { margin: 0 0 12px; font-size: 22px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    dl {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px 20px;
+      margin: 0;
+    }
+
+    dt { color: #64705f; }
+    dd { margin: 0; overflow-wrap: anywhere; }
+
+    footer {
+      padding: 32px 0;
+      margin-top: 32px;
+      border-top: 1px solid #dfe4da;
+      color: #64705f;
+      font-size: 13px;
+    }
+
+    @media (max-width: 520px) {
+      .hero { padding: 56px 0; }
+      .card { padding: 22px; }
+      dl { grid-template-columns: 1fr; gap: 4px; }
+      dd { margin-bottom: 12px; }
+    }
+  </style>
 </head>
 <body>
-    <form id="login-form">
-        <input id="username" required maxlength="15" type="text" placeholder="username을 입력해주세요!"/>
-        <input id="password" required maxlength="8" type="password" placeholder="password를 입력해주세요!"/>
-        <button type="submit">Login</button>
-    </form>
+  <header>
+    <nav class="wrap" aria-label="주요 메뉴">
+      <a class="brand" href="./">사파리</a>
+      <a href="#project">운영 프로젝트</a>
+    </nav>
+  </header>
 
-    <h1 id="greeting" class="hidden"></h1>
-    <h2 id="clock">00:00:00</h2>
-    
-    <form id="todo-form">
-        <input required maxlength="100" type="text" placeholder="내용을 입력해주세요"/>
-        <button type="submit">생성</button>
-    </form>
-
-    <ul id="todo-list"></ul>
-    
-    <div id="quotes-box">
-        <p></p>
-        <p></p>
+  <main class="wrap">
+    <div class="hero">
+      <span class="label">SAFARI</span>
+      <h1>상품을 고르는 고민에<br>도움이 되는 정보를 만듭니다.</h1>
+      <p class="intro">
+        사파리는 전자상거래 소매업을 기반으로,
+        생활 속 상품과 서비스를 살펴보고
+        선택에 필요한 정보를 콘텐츠로 전하는 개인사업체입니다.
+      </p>
     </div>
 
-    <div id="weather">
-        <span></span>
-        <span></span>
-    </div>
+    <section aria-labelledby="about-title">
+      <h2 id="about-title">사파리 소개</h2>
+      <p>
+        상품이 필요한 상황과 구매 전 고민을 구체적으로 살펴봅니다.
+        사양과 조건을 확인하고, 독자가 자신의 상황에 맞게
+        판단할 수 있도록 정보를 정리하는 것을 지향합니다.
+      </p>
+    </section>
 
-    <script src="./src/greetings.js"></script>
-    <script src="./src/clock.js"></script>
-    <script src="./src/quotes.js"></script>
-    <script src="./src/background.js"></script>
-    <script src="./src/todo.js"></script>
-    <script src="./src/geolocation.js"></script>
+    <section id="project" aria-labelledby="project-title">
+      <h2 id="project-title">운영 프로젝트</h2>
+      <article class="card">
+        <h3>요즘템</h3>
+        <p>
+          생활용품과 서비스를 선택하는 데 도움이 되는
+          콘텐츠를 만드는 프로젝트입니다.
+          상품별 특징과 구매 시 확인할 조건을 살펴보고,
+          필요한 사람에게 유용한 정보를 전달하는 방식을 검증하고 있습니다.
+        </p>
+        <p>
+          제휴 링크가 포함된 콘텐츠는 해당 게시물에서
+          경제적 이해관계를 안내합니다.
+        </p>
+      </article>
+    </section>
+
+    <section aria-labelledby="principles-title">
+      <h2 id="principles-title">콘텐츠 운영 원칙</h2>
+      <p>
+        직접 사용한 경험과 자료를 바탕으로 정리한 정보를 구분합니다.
+        가격·판매 조건처럼 달라질 수 있는 정보는 확인 시점을 고려하며,
+        확인하지 못한 내용을 사용 후기나 검증된 결과로 표현하지 않습니다.
+      </p>
+    </section>
+
+    <section aria-labelledby="business-title">
+      <h2 id="business-title">사업자 정보</h2>
+      <dl>
+        <dt>상호</dt>
+        <dd>사파리</dd>
+        <dt>대표자</dt>
+        <dd>김태남</dd>
+        <dt>사업자등록번호</dt>
+        <dd>881-06-02597</dd>
+        <dt>업태 / 종목</dt>
+        <dd>소매업 / 전자상거래 소매업</dd>
+      </dl>
+      <!-- 최신 사업장 주소와 공개용 연락처를 확인한 후 추가하세요. -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 사파리. All rights reserved.</div>
+  </footer>
 </body>
 </html>
